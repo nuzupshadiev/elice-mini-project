@@ -1,0 +1,88 @@
+
+.files {
+  display: flex;
+  flex-direction: column;
+  background-color: #22222C;
+  height: calc(100%);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.files-header{
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 20px;
+}
+.files-header p{
+  color: white;
+  font-size: 1.2rem;
+}
+.files::-webkit-scrollbar {
+  width: 10px; 
+}
+
+.files::-webkit-scrollbar-track {
+  background: #2e2e38; 
+}
+
+.files::-webkit-scrollbar-thumb {
+  background: #555; 
+  border-radius: 5px; 
+}
+
+.files::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+.file {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  background-color: #22222C;
+  color: white;
+  height: 50px;
+  padding: 0 1rem;
+  flex-shrink: 0;
+}
+.file:hover {
+  background-color: #3A3A4C;
+}
+.file p{
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  flex-grow: 1; 
+  padding-right: 1rem;
+}
+.file.active {
+  background-color: #3A3A4C;
+  color: #ccc;
+}
+.file.active .file-close-btn{
+  opacity: 1;
+}
+.file-close-btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  opacity: 0; 
+  transition: opacity 0.2s;
+}
+
+.file:hover .file-close-btn {
+  opacity: 1;
+}
+.indent.file:hover{
+  background-color: #3A3A4C;
+
+}
+@media (max-width: 768px) {
+
+  .file {
+    padding: 0.4rem 0.8rem; 
+    font-size: 0.9rem; 
+  }
+}

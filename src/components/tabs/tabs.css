@@ -1,0 +1,75 @@
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  overflow-x: auto;
+}
+.tabs::-webkit-scrollbar {
+  width: 5px; 
+  height: 6px;
+  opacity: 0;
+}
+
+.tabs::-webkit-scrollbar-track {
+  background: #2e2e38; 
+}
+
+.tabs::-webkit-scrollbar-thumb {
+  background: #555; 
+  border-radius: 5px; 
+}
+
+.tabs::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+  width: 150px;
+  background-color: #22222C;
+  color: white;
+  gap: 10px;
+}
+
+.tab p{
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  flex-grow: 1; 
+  padding-left: 5px;
+}
+.edited svg{
+  font-size: 10px;
+  color: white;
+  padding-left: 5px;
+}
+.not-edited svg{
+  display: none;
+}
+.tab.active {
+  background-color: #2E2E3C;
+  color: #ccc;
+  border-bottom: 2px solid #6700E6;
+  border-radius: 10px 10px 0 0;
+}
+.tab.active .tab-close-btn{
+  opacity: 1;
+}
+.tab-close-btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  opacity: 0;
+  transition: opacity 0.2s; 
+}
+
+.tab:hover .tab-close-btn {
+  opacity: 1; 
+}
+
