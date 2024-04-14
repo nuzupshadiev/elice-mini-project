@@ -1,0 +1,33 @@
+{
+	"name": "browser-esm-vite-react",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"serve": "vite preview",
+		"simpleserver": "node ../node_modules/yaserver/bin/yaserver --root ./dist --port 9999"
+	},
+	"dependencies": {
+		"@fortawesome/free-solid-svg-icons": "^6.5.2",
+		"@fortawesome/react-fontawesome": "^0.2.0",
+		"@react-pdf/renderer": "^3.4.2",
+		"@types/jest": "^27.5.2",
+		"@types/jszip": "^3.4.1",
+		"@types/node": "^16.18.96",
+		"@types/react": "^18.2.75",
+		"@types/react-dom": "^18.2.24",
+		"jszip": "^3.10.1",
+		"monaco-editor": "^0.47.0",
+		"pdfjs-dist": "^4.0.379",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-pdf": "^7.7.1",
+		"react-scripts": "5.0.1",
+		"styled-components": "^6.1.8",
+		"typescript": "^4.9.5",
+		"web-vitals": "^2.1.4"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-react": "^1.1.4",
+		"vite": "^2.9.17"
+	}
+}

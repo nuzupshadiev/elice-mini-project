@@ -1,0 +1,32 @@
+.image-viewer-container {
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px;
+  background-color: #717179;
+}
+
+.image-content {
+  max-width: 100%;
+  max-height: 80vh;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.download-button-image {
+  position: absolute; 
+  bottom: 10px;
+  right: 10px; 
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color:  rgb(115, 83, 234);
+  color: #fff;
+  text-align: center;
+  display: inline-block; 
+  margin-top: 5px; 
+}
+.download-button-image:hover {
+  background-color: #6700E6;
+}

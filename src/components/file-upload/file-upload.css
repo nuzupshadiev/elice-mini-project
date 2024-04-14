@@ -1,0 +1,112 @@
+.drag-drop {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.document-uploader {
+  background-color: #3A3A4C;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  height: 90%;
+}
+
+.upload-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.upload-info svg {
+  font-size: 50px;
+}
+
+.upload-info div p {
+  margin: 0;
+  font-size: 12px;
+  color: #ffffff; 
+  text-align: center;
+}
+
+.file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  overflow: auto; 
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #333; 
+}
+
+.file-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #fff; 
+}
+
+.file-actions svg {
+  cursor: pointer;
+  font-size: 18px;
+  color: #888;
+}
+
+.file-actions svg:hover {
+  color: #d44;
+}
+
+.browse-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: rgb(115, 83, 234);
+  color: #fff;
+  text-align: center;
+  display: inline-block; 
+  margin-top: 5px; 
+}
+.browse-btn:hover {
+  background-color: #6700E6;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file-downloader{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.file-downloader p{
+  color: #fff;
+}
+.download-button{
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color:  rgb(115, 83, 234);
+  color: #fff;
+  text-align: center;
+  display: inline-block; 
+  margin-top: 5px; 
+}
+.download-button:hover{
+  background-color: #6700E6;
+}
