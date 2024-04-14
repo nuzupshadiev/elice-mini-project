@@ -189,7 +189,6 @@ const App: React.FC = () => {
           onFilesUploaded={handleFilesSelected}
           downloadFiles={files}
         />
-        {/* <FileUpload/> */}
       </FileUploadHandler>
       <EditorLayout>
         <FileTree>

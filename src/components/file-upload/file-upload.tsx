@@ -110,17 +110,21 @@ const DragNdrop: React.FC<DragNdropProps> = ({
   
   const zipAndDownloadFiles = async (filesByFolder: Record<string, any>): Promise<void> => {
     const zip = new JSZip();
+    setIsLoading(true);
     addFilesToZip(filesByFolder, zip);
-    const content = await zip.generateAsync({ type: "blob" });
-    const blob = new Blob([content], { type: 'application/zip' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a")
-    a.href = url;
-    a.download = `${fileName.split('.')[0]}-modified.zip`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    zip.generateAsync({ type: "blob" }).then((content) => {
+      const blob = new Blob([content], { type: 'application/zip' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a")
+      a.href = url;
+      a.download = `${fileName.split('.')[0]}-modified.zip`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      setIsLoading(false);
+    })
+    .catch((error) => {console.error(error);});
   };
   const addFilesToZip = (folderData: Record<string, any>, currentZipFolder: JSZip) => {
     Object.keys(folderData).forEach(key => {
@@ -193,16 +197,15 @@ const DragNdrop: React.FC<DragNdropProps> = ({
         >
           <>
             <div className="upload-info">
-              <div className="icon-container">
+              {/* <div className="icon-container">
                 <FontAwesomeIcon
                   icon={faFileArrowUp}
                   style={{color: "#fff"}}
                 />
-              </div>
+              </div> */}
               <div>
                 <p>Drop your files here</p>
                 <p>or</p>
-                <p>Click to browse</p>
               </div>
             </div>
             <input

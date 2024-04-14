@@ -1,41 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBan } from '@fortawesome/free-solid-svg-icons';
+import './unsupported-file.css';
 
-const NoFileSelectedContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  color: #3A3A4C;
-  background-color: #717179;
-  flex-direction: column;
-  text-align: center;
-`;
-
-const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  font-size: 64px; 
-  margin-bottom: 24px;
-  color: #3A3A4C; 
-`;
-
-const Title = styled.div`
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 8px;
-`;
-
-const Subtitle = styled.div`
-  font-size: 16px;
-`;
 
 const UnsupportedFile = () => (
-  <NoFileSelectedContainer>
-    <StyledFontAwesomeIcon icon={faBan} />
-    <Title>This file is not supported</Title>
-    <Subtitle>Please select another file to display its contents</Subtitle>
-  </NoFileSelectedContainer>
+  <div className='no-file-selected'>
+    <FontAwesomeIcon icon={faBan} className='no-file-icon' />
+    <div className='no-file-title'>This file is not supported</div>
+    <div className='no-file-subtitle'>
+      Please select another file to display its contents
+    </div>
+  </div>
 );
 
 export default UnsupportedFile;

@@ -2,23 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile, faFileImage, faFileCode, faFilePdf, faFolderOpen, faFolder, faPlus, faUpload, faFolderTree } from '@fortawesome/free-solid-svg-icons';
 import './files.css';
-import styled from 'styled-components';
 import { FileI } from '../file-upload/file-upload';
-
-const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  font-size: 25px; 
-  margin: 10px 12px;
-  color: white;
-  display: flex;
-  align-items: center;
-  transition: transform 0.2s ease-in-out, color 0.2s ease;
-
-  &:hover {
-    transform: scale(1.1); 
-    color: #78909C;
-    cursor: pointer;
-  }
-`;
 
 
 interface FileProps {
@@ -91,7 +75,7 @@ const Folder: React.FC<FolderProps> = ({ title, files, onClick, level, activeFil
 const File: React.FC<FileProps> = ({ title, isActive, onClick, file }) => {
   return (
     <div className={`file ${isActive ? 'active' : ''}`} onClick={()=>onClick(file)}>
-      <FontAwesomeIcon icon={faFileCode}/>
+      <FontAwesomeIcon icon={file.isText ? faFileCode : faFile}/>
       <p>{title}</p>
     </div>
   );
